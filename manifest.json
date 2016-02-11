@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Github Projects",
+  "description": "Easily access your current Github projects",
+  "version": "1.0.0",
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["github-projects.js"],
+      "css": ["github-projects.css"]
+    }
+  ]
+}
