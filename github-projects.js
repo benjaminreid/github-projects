@@ -14,7 +14,7 @@ function already_saved(url) {
   return in_array;
 }
 
-console.log(repos);
+console.log('github-projects:debug', repos);
 
 if ($pagehead_actions) {
   var url = window.location.href;
@@ -40,7 +40,7 @@ if ($pagehead_actions) {
     $remove.style.display = "";
     $add.style.display = "none";
 
-    console.log(repos);
+    console.log('github-projects:debug', repos);
   });
 
 
@@ -60,7 +60,7 @@ if ($pagehead_actions) {
     $remove.style.display = "none";
     $add.style.display = "";
 
-    console.log(repos);
+    console.log('github-projects:debug', repos);
   });
 
   if (already_saved(url)) {
@@ -78,7 +78,10 @@ if ($pagehead_actions) {
 var $account_switcher = document.querySelector('.account-switcher');
 
 if ($account_switcher && repos.length > 0) {
+  var $heading = document.createElement('h2');
+  $heading.textContent = "Saved repos";
   var $repos = document.createElement('ul');
+  $repos.classList.add('repos-list');
 
   repos.forEach(function(repo) {
     var $li = document.createElement('li');
@@ -86,5 +89,6 @@ if ($account_switcher && repos.length > 0) {
     $repos.appendChild($li);
   });
 
+  $account_switcher.appendChild($heading);
   $account_switcher.appendChild($repos);
 }
