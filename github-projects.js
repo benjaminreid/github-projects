@@ -18,48 +18,60 @@ console.log(repos);
 
 if ($pagehead_actions) {
   var url = window.location.href;
-  var $button;
+
+  // add button
+  var $add = document.createElement('button');
+  $add.textContent = "Remove Repo";
+  $add.classList.add('btn');
+  $add.classList.add('btn-sm');
+
+  $add.addEventListener('click', function() {
+    var index;
+
+    repos.forEach(function(repo, i) {
+      if (repo.url == url) {
+        index = i;
+      }
+    });
+
+    repos.splice(index, 1);
+    localStorage.setItem(key, JSON.stringify(repos));
+
+    $remove.style.display = "";
+    $add.style.display = "none";
+
+    console.log(repos);
+  });
+
+
+  var $remove = document.createElement('button');
+  $remove.textContent = "Save Repo";
+  $remove.classList.add('btn');
+  $remove.classList.add('btn-sm');
+
+  $remove.addEventListener('click', function() {
+    var repo = {
+      url: url
+    };
+    repos.push(repo);
+
+    localStorage.setItem(key, JSON.stringify(repos));
+
+    $remove.style.display = "none";
+    $add.style.display = "";
+
+    console.log(repos);
+  });
 
   if (already_saved(url)) {
-    $button = document.createElement('button');
-    $button.textContent = "Remove Repo";
-    $button.classList.add('btn');
-    $button.classList.add('btn-sm');
-
-    $button.addEventListener('click', function() {
-      var index;
-
-      repos.forEach(function(repo, i) {
-        if (repo.url == url) {
-          index = i;
-        }
-      });
-
-      repos.splice(index, 1);
-      localStorage.setItem(key, JSON.stringify(repos));
-
-      alert('repo remove!');
-    });
+    $remove.style.display = "none";
   } else {
-    $button = document.createElement('button');
-    $button.textContent = "Save Repo";
-    $button.classList.add('btn');
-    $button.classList.add('btn-sm');
-
-    $button.addEventListener('click', function() {
-      var repo = {
-        url: url
-      };
-      repos.push(repo);
-
-      localStorage.setItem(key, JSON.stringify(repos));
-
-      alert('repo saved!');
-    });
+    $add.style.display = "none";
   }
 
   var $li = document.createElement('li');
-  $li.appendChild($button);
+  $li.appendChild($add);
+  $li.appendChild($remove);
   $pagehead_actions.appendChild($li);
 }
 
