@@ -2,6 +2,12 @@
 
 A Chrome Extension to help you manage the projects you're working on.
 
+## What does it do?
+
+It's aim is to make a Basecamp style starred projects view on your Github home page. While working across many org's and repos, it can be a pain to keep track of what you're working on. So the idea is that you star a repo and it'll be available from your home page!
+
+![basecamp](https://cloud.githubusercontent.com/assets/713128/13007615/761d16a0-d189-11e5-992d-b7bb475237c5.png)
+
 ## Installation
 
 To install from source, clone down the repo and then go to [chrome://extensions/](chrome://extensions/) in Chrome.
