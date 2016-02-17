@@ -9,5 +9,8 @@
       "js": ["github-projects.js"],
       "css": ["github-projects.css"]
     }
+  ],
+  "permissions": [
+    "storage"
   ]
 }
