@@ -24,6 +24,7 @@ function already_saved(url) {
 function render_buttons() {
   if ($pagehead_actions) {
     var url = window.location.href;
+    var repo_name = document.querySelector('.entry-title [itemprop="name"]').innerText;
 
     // add button
     var $add = document.createElement('button');
@@ -58,7 +59,8 @@ function render_buttons() {
 
     $remove.addEventListener('click', function() {
       var repo = {
-        url: url
+        url: url,
+        name: repo_name
       };
       repos.push(repo);
 
