@@ -3,7 +3,7 @@ var key = 'github-projects';
 var repos = [];
 
 chrome.storage.sync.get(key, function(items) {
-  repos = items[key];
+  repos = items[key] || [];
   console.log('got repos', repos);
   render_repos();
   render_buttons();
