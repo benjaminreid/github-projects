@@ -26,13 +26,13 @@ function render_buttons() {
     var url = window.location.href;
     var repo_name = document.querySelector('.entry-title [itemprop="name"]').innerText;
 
-    // add button
-    var $add = document.createElement('button');
-    $add.textContent = "Remove Repo";
-    $add.classList.add('btn');
-    $add.classList.add('btn-sm');
+    // remove button
+    var $remove = document.createElement('button');
+    $remove.textContent = "Remove Repo";
+    $remove.classList.add('btn');
+    $remove.classList.add('btn-sm');
 
-    $add.addEventListener('click', function() {
+    $remove.addEventListener('click', function() {
       var index;
 
       repos.forEach(function(repo, i) {
@@ -47,17 +47,17 @@ function render_buttons() {
         console.log('repos saved with chrome sync')
       });
 
-      $remove.style.display = "";
-      $add.style.display = "none";
+      $add.style.display = "";
+      $remove.style.display = "none";
     });
 
 
-    var $remove = document.createElement('button');
-    $remove.textContent = "Save Repo";
-    $remove.classList.add('btn');
-    $remove.classList.add('btn-sm');
+    var $add = document.createElement('button');
+    $add.textContent = "Save Repo";
+    $add.classList.add('btn');
+    $add.classList.add('btn-sm');
 
-    $remove.addEventListener('click', function() {
+    $add.addEventListener('click', function() {
       var repo = {
         url: url,
         name: repo_name
@@ -71,14 +71,14 @@ function render_buttons() {
         console.log('Chrome sync items!');
       });
 
-      $remove.style.display = "none";
-      $add.style.display = "";
+      $add.style.display = "none";
+      $remove.style.display = "";
     });
 
     if (already_saved(url)) {
-      $remove.style.display = "none";
-    } else {
       $add.style.display = "none";
+    } else {
+      $remove.style.display = "none";
     }
 
     var $li = document.createElement('li');
