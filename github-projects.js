@@ -1,10 +1,13 @@
+const debug_mode = false;
+
 var $pagehead_actions = document.querySelector('.pagehead-actions');
 var key = 'github-projects';
 var repos = [];
 
+
 chrome.storage.sync.get(key, function(items) {
   repos = items[key] || [];
-  console.log('got repos', repos);
+  log('got repos', repos);
   render_repos();
   render_buttons();
 });
@@ -44,7 +47,7 @@ function render_buttons() {
       repos.splice(index, 1);
 
       chrome.storage.sync.set({ 'github-projects': repos }, function() {
-        console.log('repos saved with chrome sync')
+        log('repos saved with chrome sync')
       });
 
       $add.style.display = "";
@@ -70,9 +73,9 @@ function render_buttons() {
 
       localStorage.setItem(key, JSON.stringify(repos));
 
-      console.log('attempt sync');
+      log('attempt sync');
       chrome.storage.sync.set({ 'github-projects': repos }, function() {
-        console.log('Chrome sync items!');
+        log('Chrome sync items!');
       });
 
       $add.style.display = "none";
@@ -147,6 +150,10 @@ function render_repos() {
     $dashboard_sidebar_first_child = $dashboard_sidebar.querySelector('.boxed-group');
     $dashboard_sidebar.insertBefore($saved_repos, $dashboard_sidebar_first_child);
   }
+}
+
+function log() {
+  debug_mode && console.log.apply(console, arguments);
 }
 
 var create_private_repo_svg = string_to_element.bind(null, '<svg aria-hidden="true" class="octicon octicon-lock repo-icon" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M4 13h-1v-1h1v1z m8-6v7c0 0.55-0.45 1-1 1H1c-0.55 0-1-0.45-1-1V7c0-0.55 0.45-1 1-1h1V4C2 1.8 3.8 0 6 0s4 1.8 4 4v2h1c0.55 0 1 0.45 1 1z m-8.2-1h4.41V4c0-1.22-0.98-2.2-2.2-2.2s-2.2 0.98-2.2 2.2v2z m7.2 1H2v7h9V7z m-7 1h-1v1h1v-1z m0 2h-1v1h1v-1z"></path></svg>');
