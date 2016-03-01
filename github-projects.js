@@ -71,8 +71,6 @@ function render_buttons() {
       };
       repos.push(repo);
 
-      localStorage.setItem(key, JSON.stringify(repos));
-
       log('attempt sync');
       chrome.storage.sync.set({ 'github-projects': repos }, function() {
         log('Chrome sync items!');
