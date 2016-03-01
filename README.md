@@ -21,3 +21,7 @@ Check "Developer Mode" and then click "Load unpacked extension...". Choose the t
 If you want to work on the extension locally after installing it, use this other handy extension to reload the unpacked extension.
 
 [Extensions Reloader](https://chrome.google.com/webstore/detail/extensions-reloader/fimgfedafeadlieiabdeeaodndnlbhid)
+
+## Thanks
+
+Yay, we have a contributor! Thanks to @supercrabtree for adding the default Github styling.
