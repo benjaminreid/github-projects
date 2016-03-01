@@ -9,6 +9,7 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
+  "author": "Benjamin Reid",
   "content_scripts": [
     {
       "matches": ["https://github.com/*"],
