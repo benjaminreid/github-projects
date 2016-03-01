@@ -47,7 +47,7 @@ function render_buttons() {
       repos.splice(index, 1);
 
       chrome.storage.sync.set({ 'github-projects': repos }, function() {
-        log('repos saved with chrome sync')
+        log('repos saved with chrome sync', repos)
       });
 
       $add.style.display = "";
@@ -73,7 +73,7 @@ function render_buttons() {
 
       log('attempt sync');
       chrome.storage.sync.set({ 'github-projects': repos }, function() {
-        log('Chrome sync items!');
+        log('Chrome sync items!', repos);
       });
 
       $add.style.display = "none";
