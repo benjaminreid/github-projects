@@ -3,7 +3,6 @@
   "name": "Github Projects",
   "description": "Easily access your current Github projects",
   "version": "1.0.0",
-  "default_locale": "en",
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
