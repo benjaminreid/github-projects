@@ -6,7 +6,7 @@ A Chrome Extension to help you manage the projects you're working on.
 
 It allows you to seamlessly bookmark repo's on Github to your home page.
 
-A new "Save Repo" button is added to any repo's you visit.
+A new "Save Repo" button is added to any repo you visit.
 
 ![screen shot 2016-05-10 at 09 36 33](https://cloud.githubusercontent.com/assets/713128/15140384/bb054be0-1692-11e6-97b6-85f9a37d8741.png)
 
