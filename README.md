@@ -4,9 +4,15 @@ A Chrome Extension to help you manage the projects you're working on.
 
 ## What does it do?
 
-It's aim is to make a Basecamp style starred projects view on your Github home page. While working across many org's and repos, it can be a pain to keep track of what you're working on. So the idea is that you star a repo and it'll be available from your home page!
+It allows you to seamlessly bookmark repo's on Github to your home page.
 
-![basecamp](https://cloud.githubusercontent.com/assets/713128/13007615/761d16a0-d189-11e5-992d-b7bb475237c5.png)
+A new "Save Repo" button is added to any repo's you visit.
+
+![screen shot 2016-05-10 at 09 36 33](https://cloud.githubusercontent.com/assets/713128/15140384/bb054be0-1692-11e6-97b6-85f9a37d8741.png)
+
+They'll then appear on your dashboard for easy access. **They're also synced across your Google account in Chrome**.
+
+![screen shot 2016-05-10 at 09 34 40](https://cloud.githubusercontent.com/assets/713128/15140335/843af790-1692-11e6-8ceb-a11a143eaa19.png)
 
 ## Installation
 
