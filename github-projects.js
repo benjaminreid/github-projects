@@ -27,7 +27,7 @@ function already_saved(url) {
 function render_buttons() {
   if ($pagehead_actions) {
     var url = window.location.href;
-    var repo_name = document.querySelector('.entry-title [itemprop="name"]').innerText;
+    var repo_name = document.querySelector('.repohead-details-container h1 [itemprop="name"]').innerText;
 
     // remove button
     var $remove = document.createElement('button');
@@ -61,7 +61,7 @@ function render_buttons() {
     $add.classList.add('btn-sm');
 
     $add.addEventListener('click', function() {
-      var $entry_title = document.querySelector('.entry-title');
+      var $entry_title = document.querySelector('.repohead-details-container h1');
       var repo = {
         url: url,
         name: repo_name,
